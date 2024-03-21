@@ -6,7 +6,7 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 10:51:21 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/03/13 13:49:27 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:38:27 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	map_size(t_env *env, char *maps)
 	if (!line)
 		error_mes("Map Empty");
 	tab = ft_split(line, ' ');
-	while (tab(env->map_l))
+	while (tab[env->map_l])
 	{
 		free(tab[env->map_l]);
 		env->map_l++;
@@ -88,7 +88,7 @@ void	parse_map(t_env *env, char *file)
 		tab = ft_split(line, ' ');
 		free(line);
 		env->x = -1;
-		while (++env->y < env->map_l)
+		while (++env->x < env->map_l)
 		{
 			env->final_map[env->y][env->x] = ft_atoi(tab[env->x]);
 			free(tab[env->x]);

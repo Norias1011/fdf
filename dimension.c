@@ -6,11 +6,12 @@
 /*   By: akinzeli <akinzeli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:10:20 by akinzeli          #+#    #+#             */
-/*   Updated: 2024/03/13 16:55:34 by akinzeli         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:31:32 by akinzeli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include <math.h>
 
 void	three_point(t_env *env)
 {
@@ -33,11 +34,12 @@ void	three_point(t_env *env)
 		}
 		env->y++;
 	}
+	free_tab(env);
 }
 
 void	two_point(t_env *env)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	env->final_dim = malloc(sizeof(t_final) * env->map_h * env->map_l);
